@@ -34,7 +34,9 @@
     "@wdio/mocha-framework": "8.35.0",
     "@wdio/spec-reporter": "8.32.4",
     "allure-commandline": "2.27.0",
-    "babel-plugin-module-resolver": "5.0.0"
+    "babel-plugin-module-resolver": "5.0.0",
+    "https-proxy-agent": "7.0.5",
+    "undici": "6.20.1"
   },
   "devDependencies": {
     "eslint": "^8.57.0",

@@ -14,4 +14,6 @@ WORKDIR /app
 COPY . .
 RUN npm install
 
+ENV HTTP_PROXY=localhost:3128
+
 ENTRYPOINT [ "./entrypoint.sh" ]

@@ -33,8 +33,14 @@ export const config = {
   capabilities: [
     {
       browserName: 'chrome',
+      proxy: {
+        proxyType: 'manual',
+        httpProxy: 'localhost:3128',
+        sslProxy: 'localhost:3128'
+      },
       'goog:chromeOptions': {
         args: [
+          '--proxy-server="localhost:3128"',
           '--no-sandbox',
           '--disable-infobars',
           '--headless',
@@ -59,9 +65,9 @@ export const config = {
 
   // Number of failures before the test suite bails.
   bail: 0,
-  waitforTimeout: 10000,
+  waitforTimeout: 5000,
   waitforInterval: 200,
-  connectionRetryTimeout: 120000,
+  connectionRetryTimeout: 12000,
   connectionRetryCount: 3,
 
   framework: 'mocha',
