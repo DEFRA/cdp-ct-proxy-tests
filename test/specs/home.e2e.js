@@ -12,8 +12,14 @@ describe('Chrome Proxy', () => {
   })
 
   it('Should fail to open a page outside the platform that isnt permitted by the proxy', async () => {
-    await browser.url('https://www.google.com')
+    let error = null
+    try {
+      await browser.url('https://www.google.com')
+    } catch (e) {
+      error = e
+    }
+
     // This will fail
-    await expect(browser).toHaveTitle('Google')
+    await expect(error).not.toBeNull()
   })
 })

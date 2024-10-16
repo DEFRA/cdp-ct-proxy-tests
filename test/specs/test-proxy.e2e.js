@@ -31,7 +31,7 @@ describe('Proxy calls from test suite', () => {
   it('Should make internal calls without the proxy', async () => {
     const env = process.env.ENVIRONMENT || 'infra-dev'
     const res = await undiciFetch(
-      `https://cdp-example-node-backend.${env}.cdp-int.defra.cloud/`,
+      `https://cdp-example-node-backend.${env}.cdp-int.defra.cloud/health`,
       { method: 'GET' }
     )
     expect(res.status).toBe(200)
